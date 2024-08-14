@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+// 物理常数定义
+#define GRAVITY 9.81 // 地球重力加速度，单位 m/s^2
+
+// 函数原型声明
+void calculatePhysics(double force, double mass, double time);
+
+int main() {
+    double force, mass, time;
+
+    // 输入力、质量和时间
+    printf("Enter force (N): ");
+    scanf("%lf", &force);
+
+    printf("Enter mass (kg): ");
+    scanf("%lf", &mass);
+
+    printf("Enter time (s): ");
+    scanf("%lf", &time);
+
+    // 调用函数计算物理参数
+    calculatePhysics(force, mass, time);
+
+    return 0;
+}
+
+// 计算物理参数的函数定义
+void calculatePhysics(double force, double mass, double time) {
+    double displacement, velocity, momentum;
+
+    // 计算位移：s = (1/2) * a * t^2，其中 a = F / m
+    displacement = 0.5 * (force / mass) * time * time;
+
+    // 计算速度：v = a * t，其中 a = F / m
+    velocity = (force / mass) * time;
+
+    // 计算动量：p = F * t
+    momentum = force * time;
+
+    // 输出计算结果
+    printf("\nPhysics Parameters:\n");
+    printf("Displacement (m): %.2f\n", displacement);
+    printf("Velocity (m/s): %.2f\n", velocity);
+    printf("Momentum (kg*m/s): %.2f\n", momentum);
+}

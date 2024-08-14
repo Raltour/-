@@ -1,0 +1,45 @@
+#include <stdio.h>
+
+// 常数
+#define ELECTRON_CHARGE 1.602e-19 // 电子电荷 (C)
+#define MASS_ELECTRON 9.109e-31   // 电子质量 (kg)
+
+// 函数原型
+double calculateAcceleration(double electricField);
+double calculateVelocity(double acceleration, double time);
+double calculateDisplacement(double acceleration, double time);
+
+double calculateAcceleration(double electricField) {
+    return (ELECTRON_CHARGE * electricField) / MASS_ELECTRON;
+}
+
+double calculateVelocity(double acceleration, double time) {
+    return acceleration * time;
+}
+
+double calculateDisplacement(double acceleration, double time) {
+    return 0.5 * acceleration * time * time;
+}
+
+int main() {
+    double electricField, time;
+    
+    // 输入电场强度和时间
+    printf("Enter the electric field strength (V/m): ");
+    scanf("%lf", &electricField);
+    
+    printf("Enter the time (seconds): ");
+    scanf("%lf", &time);
+
+    // 计算加速度、速度和位移
+    double acceleration = calculateAcceleration(electricField);
+    double velocity = calculateVelocity(acceleration, time);
+    double displacement = calculateDisplacement(acceleration, time);
+
+    // 输出结果
+    printf("Acceleration: %.2e m/s^2\n", acceleration);
+    printf("Velocity: %.2e m/s\n", velocity);
+    printf("Displacement: %.2e m\n", displacement);
+
+    return 0;
+}

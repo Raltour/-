@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+// 函数声明与定义：计算两个函数的和
+// 请问这个地方有多少种写法？是不是有很多种？
+int add(int a, int b){
+    return a+b;
+};
+
+int main() {
+    int num1, num2, sum;
+
+    // 提示用户输入第一个整数
+    printf("Enter first integer: ");
+    scanf("%d", &num1);
+
+    // 提示用户输入第二个整数
+    printf("Enter second integer: ");
+    scanf("%d", &num2);
+
+    // 调用 add 函数并将结果存储在 sum 变量中
+    sum = add(num1, num2);
+
+    // 输出结果
+    printf("Sum: %d\n", sum);
+
+    return 0;
+}

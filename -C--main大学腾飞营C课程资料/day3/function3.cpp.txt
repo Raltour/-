@@ -1,0 +1,43 @@
+#include <stdio.h>  // 包含标准输入输出库头文件，以便使用 printf 和 scanf 函数
+
+// 函数声明
+void getInput(int *a, int *b);   // 声明获取输入的函数
+int calculateSum(int a, int b);  // 声明计算和的函数
+int calculateProduct(int a, int b); // 声明计算乘积的函数
+
+int main() {
+    int num1, num2, sum, product;  // 声明四个整数变量
+
+    // 获取用户输入的两个整数
+    getInput(&num1, &num2);
+
+    // 计算两个整数的和
+    sum = calculateSum(num1, num2);
+
+    // 计算两个整数的乘积
+    product = calculateProduct(num1, num2);
+
+    // 输出结果
+    printf("Sum: %d\n", sum);  // 输出和的结果
+    printf("Product: %d\n", product);  // 输出乘积的结果
+
+    return 0;  // 返回 0，表示程序成功执行
+}
+
+// 定义 getInput 函数，用于获取用户输入的两个整数
+void getInput(int *a, int *b) {
+    printf("Enter first integer: ");  // 提示输入第一个整数
+    scanf("%d", a);  // 读取第一个整数并存储在 a 指向的内存位置
+    printf("Enter second integer: ");  // 提示输入第二个整数
+    scanf("%d", b);  // 读取第二个整数并存储在 b 指向的内存位置
+}
+
+// 定义 calculateSum 函数，计算两个整数的和
+int calculateSum(int a, int b) {
+    return a + b;  // 返回两个整数的和
+}
+
+// 定义 calculateProduct 函数，计算两个整数的乘积
+int calculateProduct(int a, int b) {
+    return a * b;  // 返回两个整数的乘积
+}
